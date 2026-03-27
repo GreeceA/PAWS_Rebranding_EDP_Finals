@@ -1,0 +1,421 @@
+* {
+    padding:0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-size: 0;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    width: 100vw;
+    height: auto;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/*ANG STYLING SA TIBUOK*/
+/*CONTAINER*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF4EE;
+}
+
+.left-column {
+    flex: 1 1 300px;
+    max-width: 80%;
+    padding-left: 8%;
+    padding-right: 1%;
+}
+
+.right-column {
+    flex: 1 1 300px;
+    max-width: 70%;
+    padding: 0 3%;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    flex-direction: column;    
+    padding-top: 2%;
+}
+
+.right-column img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    max-height: 320px;
+    border-radius: 5%;
+    border: none;     
+    display: block;
+    margin: 0 auto;          
+}
+
+.headline {
+    font-family: 'Perpetua Titling MT', serif;
+    font-size: 45px; 
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    word-break: break-word;
+  }
+  
+  .description {
+    font-size: 18px; 
+    color: #333;
+    margin-bottom: 25px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+.description2 {
+    font-size: 16px;
+    font-family: "Sarabun";
+    font-weight: 700;
+    color: black;
+    width: auto;
+    height: 21px;
+    padding-top: 5px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.explore-button {
+    display: inline-block;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #efce8d;
+  color: #333;
+}
+
+/*END SA CONTAINER BOOM SHAKALAKA*/
+/*TRANSITION PICTURE*/
+.transition{
+  width: 100vw; 
+}
+/*END SA TRANSITION BOOM SHAKALAKA*/
+/*CONTAINER NASAD PERO SA PICTURE*/
+.card-container {
+    background-color: #FFF4EE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; 
+    padding-top: 3%;
+    box-sizing: border-box;
+}
+
+.card {
+    flex: 1 1 280px; 
+    max-width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    gap: 3px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 20px;
+    background-color: #FFF4EE;
+    transition: background-color 0.3s ease;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-text {
+    background-color: #F7D8CA;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 0 0 15px;
+    color: #333;
+}
+
+.readmore {
+    color: #F8A7A4;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.readmore:hover {
+    text-decoration: underline;
+    color: #C26A5A;
+}
+
+/*WND SA CONTAINER PERO PICTURE*/
+/*TRANSITION LAGI*/
+.transition2{
+    width: 65.5%;
+    padding-top: 1.5%;
+    padding-bottom: 3.5%;
+}
+
+hr{
+    margin-bottom: 4%;
+}
+/*END SA TRANS2 BOOM SHAKALAKA*/
+
+/*FOOTER I REPEAT THIS IS THE FOOTER MY G*/
+.footer-container {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: row;
+    max-height: 10%;
+  }
+  
+  .left {
+    flex: 1 1 auto;
+    background-color: #ffeddd;
+    display: flex; 
+    flex-direction: column;
+    max-width: 27%;
+  }
+  
+  .footprint {
+    width: 100%;
+    object-fit: cover;
+    margin-top: auto;
+  }
+  
+  .middle {
+    flex: 1 1 auto;
+    background-color: #ffeddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .middle-middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pawcon {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .paws {
+    color: #6a9c9a;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .motto {
+    color: #e8a687;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-style: italic;
+    max-width: 200px;
+  }
+  
+  .right {
+    flex: 1 1 auto;
+    background-color: #ffeddd;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footertable {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: auto;
+  }
+  
+  .footertable th,
+  .footertable td {
+    padding: 5px;
+    border: none;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1rem;
+    word-wrap: break-word;
+    line-height: 1.7rem;
+  }
+  
+  .footertable th {
+    background-color: #ffeddd;
+    font-weight: bold;
+    color: #6A9C9A;
+    font-size: 1.25rem;
+  }
+  
+  .insidet {
+    color: #4a4e69;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  .footertable a:hover {
+    text-decoration: underline;
+  }  
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;         
+    justify-content: space-between;
+    align-items: left;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 50%;      
+    padding-left: 1rem;
+    padding-right: 1rem;    
+    padding-bottom: 0.5rem;      
+  }
+  
+  .footertxt {
+    font-size: 0.9rem;
+    color: #e8a687;
+    flex: 1;                     
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .butanganan{
+    box-sizing: border-box;
+  }
+  
+  /*If ayaw mag flex edi tanggalun ang OA na mga div*/
+  @media (max-width: 575px) {
+    .left, .middle {
+      display: none;
+    }
+  
+    .right {
+      flex: 1 1 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+/*END OF FOOTER I REPEAT END OF FOOTER*/
+
+/* Header Section */
+.header {
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #FDCAAB 0%, #FEDFD1 18%, #FFF4EE 100%);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 15px;
+  font-family: 'Sarabun', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+}
+
+.header-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: black;
+  max-width: 240px;
+  line-height: 1.3;
+  margin-left: 15px;
+}
+
+.header-links-page {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 2;
+  min-width: 300px;
+}
+
+.header-item {
+  position: relative;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 400;
+  padding-bottom: 0px;
+  white-space: nowrap;
+  width: 130px;
+}
+
+.header-item::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #D57272;
+  transition: width 0.4s ease-in-out;
+}
+
+.header-item:hover::after {
+  width: 80%;
+}
+
+
+
+
