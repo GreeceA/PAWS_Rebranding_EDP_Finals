@@ -814,7 +814,7 @@ body {
   }
 
   .right {
-    background-image: url('/img-home/footprint2.png');
+    background-image: url('../assets/images/footprint2.png');
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 240px;
