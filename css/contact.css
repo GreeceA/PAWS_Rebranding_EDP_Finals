@@ -16,7 +16,7 @@ body {
 /*PARA SA TIBUOK PAGEEE*/
 
 .top-section {
-    background-image: url('contact1.png');
+    background-image: url('../assets/images/contact1.png');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -156,7 +156,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background-image: url('balaygreen.png');
+    background-image: url('../assets/images/balaygreen.png');
     background-size: cover;
     background-position: center;
     flex: 1 1 300px;
