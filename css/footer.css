@@ -1,0 +1,135 @@
+ .footer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-height: 10%;
+  }
+  
+  .left {
+    flex: 2;
+    background-color: #ffeddd;
+    display: flex; 
+    flex-direction: column;
+    max-width: 27%;
+  }
+  
+  .footprint {
+    width: 100%;
+    object-fit: cover;
+    margin-top: auto;
+  }
+  
+  .middle {
+    flex: 1;
+    background-color: #ffeddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .middle-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pawcon {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .paws {
+    color: #6a9c9a;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .motto {
+    color: #e8a687;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-style: italic;
+    max-width: 200px;
+  }
+  
+  .right {
+    flex: 3;
+    background-color: #ffeddd;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footertable {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: auto;
+  }
+  
+  .footertable th,
+  .footertable td {
+    padding: 5px;
+    border: none;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1rem;
+    word-wrap: break-word;
+    line-height: 1.7rem;
+  }
+  
+  .footertable th {
+    background-color: #ffeddd;
+    font-weight: bold;
+    color: #6A9C9A;
+    font-size: 1.25rem;
+  }
+  
+  .insidet {
+    color: #4a4e69;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  .footertable a:hover {
+    text-decoration: underline;
+  }  
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;         
+    justify-content: space-between;
+    align-items: left;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 50%;      
+    padding-left: 1rem;
+    padding-right: 1rem;    
+    padding-bottom: 0.5rem;      
+  }
+  
+  .footertxt {
+    font-size: 0.9rem;
+    color: #e8a687;
+    flex: 1;                     
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+
+  
