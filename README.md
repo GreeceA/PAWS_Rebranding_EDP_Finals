@@ -56,7 +56,7 @@ To truly understand the value of this rebrand, here is a look at the original PA
 ###  Adoption & Donation Flow
 *We removed friction from the most critical user journeys, turning text-heavy pages into interactive, streamlined galleries.*
 
-![Adoption & Donation Walkthrough](assets/images/readme/adoption-donation-walkthrough.gif)
+![Adoption & Donation Walkthrough](assets/images/readme/EDP_Final.gif)
 ---
 
 ##  Technical Highlights
