@@ -1,52 +1,55 @@
+
+
 function initFaqToggles() {
   const toggleButtons = document.querySelectorAll('.faq-toggle');
-  const faqBoxes = document.querySelectorAll('.faq-box');
-  
-  if (toggleButtons.length === 0) {
-    setTimeout(initFaqToggles, 100);
-    return;
-  }
-  
+  const faqItems = document.querySelectorAll('.faq-item');
+
   toggleButtons.forEach(button => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       const item = this.closest('.faq-item');
-      item.classList.toggle('active');
-    });
-  });
-  
-  faqBoxes.forEach(box => {
-    box.addEventListener('click', function() {
-      const item = this.closest('.faq-item');
-      item.classList.toggle('active');
+      const isActive = item.classList.contains('active');
+      // Close all
+      faqItems.forEach(faq => faq.classList.remove('active'));
+      // If it was not active, open it
+      if (!isActive) {
+        item.classList.add('active');
+      }
+      // If it was active, it stays closed (toggled)
     });
   });
 }
 
-document.addEventListener('DOMContentLoaded', initFaqToggles);
-window.addEventListener('load', initFaqToggles);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFaqToggles);
+} else {
+  initFaqToggles();
+}
 
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  setTimeout(initFaqToggles, 1);
-} //CHOUR INTERACTIVE
 
-document.getElementById("ispay").addEventListener("click", function () {
-  document.getElementById("sched-text-1").scrollIntoView({ behavior: "smooth" });
-});
+function initSidebarMenu() {
+  const menuMap = [
+    { btn: 'ispay', target: 'sched-text-1' },
+    { btn: 'howtobook', target: 'sched-text-2' },
+    { btn: 'angrates', target: 'sched-text-3' },
+    { btn: 'surgeri', target: 'sched-text-4' },
+    { btn: 'fowk', target: 'FOKK' }
+  ];
+  menuMap.forEach(({ btn, target }) => {
+    const btnEl = document.getElementById(btn);
+    const targetEl = document.getElementById(target);
+    if (btnEl && targetEl) {
+      btnEl.addEventListener('click', function(e) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  });
+}
 
-document.getElementById("howtobook").addEventListener("click", function () {
-  document.getElementById("sched-text-2").scrollIntoView({ behavior: "smooth" });
-});
-
-document.getElementById("angrates").addEventListener("click", function () {
-  document.getElementById("sched-text-3").scrollIntoView({ behavior: "smooth" });
-});
-
-document.getElementById("surgeri").addEventListener("click", function () {
-  document.getElementById("sched-text-4").scrollIntoView({ behavior: "smooth" });
-});
-
-document.getElementById("fowk").addEventListener("click", function () {
-  document.getElementById("FOKK").scrollIntoView({ behavior: "smooth" });
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSidebarMenu);
+} else {
+  initSidebarMenu();
+}
