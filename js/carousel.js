@@ -1,70 +1,92 @@
+/* ============================================================
+   js/carousel.js  —  Auto-sliding carousel (both instances)
+   ============================================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  //ini that CAROUSELL
+
   function initCarousel(carouselIndex) {
-    const carouselContainer = document.querySelectorAll('.carousel-container')[carouselIndex];
-    const slides = carouselContainer.querySelectorAll('.carousel-slide');
-    const indicators = carouselContainer.querySelectorAll('.indicator');
-    const prevBtn = carouselContainer.querySelector('.carousel-arrow.prev');
-    const nextBtn = carouselContainer.querySelector('.carousel-arrow.next');
+    const containers = document.querySelectorAll('.carousel-container');
+    if (!containers[carouselIndex]) return;
+
+    const container   = containers[carouselIndex];
+    const slides      = container.querySelectorAll('.carousel-slide');
+    const indicators  = container.querySelectorAll('.indicator');
+    const slidesTrack = container.querySelector('.carousel-slides');
+
     let currentSlide = 0;
     let interval;
 
     function showSlide(index) {
-      const carouselSlides = carouselContainer.querySelector('.carousel-slides');
-      const offset = -index * 100;
-      carouselSlides.style.transform = `translateX(${offset}%)`;
-
-      indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('active', i === index);
-      });
+      slidesTrack.style.transform = `translateX(${-index * 100}%)`;
+      indicators.forEach((ind, i) => ind.classList.toggle('active', i === index));
+      currentSlide = index;
     }
 
-    function showNextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
     }
 
-    function showPrevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
+    function startTimer() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 3500);
     }
 
-    function startAutoSlide() {
-      interval = setInterval(showNextSlide, 3500);
+    function resetTimer() {
+      clearInterval(interval);
+      startTimer();
     }
 
-       nextBtn?.addEventListener('click', () => {
-      showNextSlide();
-      resetTimer();
-    });
-
-    prevBtn?.addEventListener('click', () => {
-      showPrevSlide();
-      resetTimer();
-    });
-
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+    // Indicator clicks
+    indicators.forEach((ind, i) => {
+      ind.addEventListener('click', () => {
+        showSlide(i);
         resetTimer();
       });
     });
 
-    // Initial load
-    showSlide(currentSlide);
-    startAutoSlide();
+    // Optional arrow buttons (if added to markup)
+    const prevBtn = container.querySelector('.carousel-arrow.prev');
+    const nextBtn = container.querySelector('.carousel-arrow.next');
+
+    prevBtn?.addEventListener('click', () => {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+      resetTimer();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      resetTimer();
+    });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    container.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', e => {
+      const delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 40) {
+        delta < 0 ? nextSlide() : showSlide((currentSlide - 1 + slides.length) % slides.length);
+        resetTimer();
+      }
+    }, { passive: true });
+
+    showSlide(0);
+    startTimer();
   }
 
-  
-  initCarousel(0);  // For the first carousel
-  initCarousel(1);  //second
-});
+  initCarousel(0);
+  initCarousel(1);
 
-//fucntion for the donation button
-document.getElementById("donate-btn").addEventListener("click", function () {
-  document.getElementById("domination").scrollIntoView({
-    behavior: "smooth"
-  });
-});
+  // ---- Donate button smooth scroll ----
+  const donateBtn = document.getElementById('donate-btn');
+  const domination = document.getElementById('domination');
 
+  if (donateBtn && domination) {
+    donateBtn.addEventListener('click',   () => domination.scrollIntoView({ behavior: 'smooth' }));
+    donateBtn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') domination.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+});
